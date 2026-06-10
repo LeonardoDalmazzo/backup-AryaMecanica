@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Aryá Mecânica: oficina especializada em manutenção e reparo de motocicletas em São Paulo."
+    >
+    <title>Aryá Mecânica</title>
+    <link rel="icon" href="aryamecanica files/faviconam.png">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Navegação principal">
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          aria-label="Abrir menu"
+          data-menu-open
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="site-nav__links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#trabalho">Nosso trabalho</a></li>
+          <li><a href="#quem-somos">Quem somos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="mobile-menu" id="mobile-menu" hidden data-mobile-menu>
+      <button
+        class="mobile-menu__close"
+        type="button"
+        aria-label="Fechar menu"
+        data-menu-close
+      ></button>
+
+      <nav class="mobile-menu__nav" aria-label="Navegação mobile">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#trabalho">Nosso trabalho</a></li>
+          <li><a href="#quem-somos">Quem somos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="social-list social-list--menu" aria-label="Redes sociais">
+        <a class="social-link social-link--youtube" href="#" aria-label="YouTube"></a>
+        <a class="social-link social-link--facebook" href="#" aria-label="Facebook"></a>
+        <a class="social-link social-link--instagram" href="#" aria-label="Instagram"></a>
+      </div>
+    </div>
+
+    <main>
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero__content">
+          <img
+            class="hero__logo"
+            src="aryamecanica files/REDLOGO (1).png"
+            alt="Aryá Mecânica"
+          >
+          <h1 id="hero-title">Precisão &amp; excelência</h1>
+          <p>Especialista em motos</p>
+        </div>
+
+        <div class="social-list social-list--hero" aria-label="Redes sociais">
+          <a class="social-link social-link--youtube" href="#" aria-label="YouTube"></a>
+          <a class="social-link social-link--facebook" href="#" aria-label="Facebook"></a>
+          <a class="social-link social-link--instagram" href="#" aria-label="Instagram"></a>
+        </div>
+      </section>
+
+      <section class="services section-dark" id="servicos" aria-labelledby="services-title">
+        <div class="section-shell section-shell--narrow">
+          <header class="section-heading section-heading--light">
+            <h2 id="services-title">Serviços</h2>
+            <span aria-hidden="true"></span>
+          </header>
+
+          <div class="service-icons" aria-hidden="true">
+            <span class="service-icon">
+              <svg viewBox="0 0 64 64" focusable="false">
+                <path d="M19 8l37 37-7 7L12 15z"></path>
+                <path d="M48 10l6 6-13 13-6-6z"></path>
+                <path d="M12 45l7 7 18-18-7-7z"></path>
+                <path d="M16 41l7 7"></path>
+              </svg>
+            </span>
+            <span class="service-icon">
+              <svg viewBox="0 0 64 64" focusable="false">
+                <path d="M22 8h18l8 8v38a4 4 0 0 1-4 4H22a4 4 0 0 1-4-4V12a4 4 0 0 1 4-4z"></path>
+                <path d="M40 8v10h10"></path>
+                <path d="M26 24h12"></path>
+                <path d="M26 34h12"></path>
+                <path d="M26 44h12"></path>
+                <path d="M45 30l8 24"></path>
+              </svg>
+            </span>
+            <span class="service-icon">
+              <svg viewBox="0 0 64 64" focusable="false">
+                <path d="M18 22h28l-3 32H21z"></path>
+                <path d="M21 22c1-8 7-14 11-14s10 6 11 14"></path>
+                <path d="M24 32h16"></path>
+                <path d="M24 42h16"></path>
+              </svg>
+            </span>
+          </div>
+
+          <ul class="service-list">
+            <li>Revisão preventiva e manutenção corretiva</li>
+            <li>Diagnóstico por Scanner Texa TXB</li>
+            <li>Instalação de acessórios para performance e estético</li>
+            <li>Troca de óleo</li>
+            <li>Restauração de partes oxidadas</li>
+            <li>Recuperação de moto acidentada</li>
+            <li>Especialista em motos de média e alta cilindrada</li>
+          </ul>
+
+          <p class="services__more">E também temos:</p>
+          <a class="button button--outline" href="#contato">
+            Serviço de Leva e Traz (terceirizado)
+          </a>
+        </div>
+      </section>
+
+      <section class="work" id="trabalho" aria-labelledby="work-title">
+        <div class="section-shell">
+          <header class="section-heading">
+            <h2 id="work-title">Nosso trabalho</h2>
+            <span aria-hidden="true"></span>
+            <p>
+              Qualidade e transparência são dois diferenciais de grande importância aqui na
+              Aryá Mecânica, isso porque todos os nossos clientes recebem por vídeo, através do
+              canal escolhido, a evidência do processo ao qual a sua moto foi submetida.
+            </p>
+          </header>
+
+          <div class="work-gallery" aria-label="Fotos da oficina e serviços Aryá Mecânica">
+            <img src="aryamecanica files/Ar1.png" alt="Bancada técnica da oficina Aryá Mecânica">
+            <img src="aryamecanica files/Ar2-1.png" alt="Painel de ferramentas organizadas">
+            <img src="aryamecanica files/Ar2-0011.png" alt="Medição técnica em motocicleta">
+            <img src="aryamecanica files/Ar4.png" alt="Motocicleta Triumph em manutenção">
+            <img src="aryamecanica files/Ar3.png" alt="Motocicleta desmontada na oficina">
+            <img src="aryamecanica files/Ar2-0022.png" alt="Teste de fluido de freio em motocicleta">
+          </div>
+        </div>
+      </section>
+
+      <section class="about metal-section" id="quem-somos" aria-labelledby="about-title">
+        <div class="section-shell section-shell--card">
+          <article class="content-card">
+            <header class="section-heading">
+              <h2 id="about-title">Quem somos</h2>
+              <span aria-hidden="true"></span>
+            </header>
+
+            <div class="rich-text">
+              <p>Bem-vindo à Aryá Mecânica!</p>
+              <p>
+                Fundada em 2018 pelo renomado mecânico Leonel Dalmazzo, a Aryá Mecânica é
+                uma oficina especializada em proporcionar serviços excepcionais de manutenção e
+                reparo para motocicletas. Com mais de 15 anos de experiência no setor e
+                especialização em Mecânica de Alto Desempenho, Leonel é apaixonado por
+                entregar resultados de qualidade aos nossos clientes.
+              </p>
+              <p>
+                Na Aryá Mecânica, estamos comprometidos em oferecer um serviço de primeira
+                linha, garantindo que sua motocicleta esteja sempre funcionando no máximo
+                desempenho. Para alcançar esse objetivo, trabalhamos apenas com as melhores
+                marcas de ferramentas e equipamentos do mundo, permitindo-nos diagnosticar as
+                necessidades exatas da sua moto e realizar os reparos necessários com precisão e
+                excelência.
+              </p>
+              <p>
+                O nosso time operacional é altamente qualificado e constantemente treinado nas
+                últimas tecnologias e técnicas do setor, garantindo que estejamos sempre
+                atualizados e prontos para enfrentar qualquer desafio mecânico que sua
+                motocicleta possa apresentar. Desde a manutenção preventiva e reparos
+                complexos, nossa dedicação à qualidade e atenção aos detalhes são
+                incomparáveis.
+              </p>
+              <p>
+                Na Aryá Mecânica, valorizamos cada cliente que entra pela nossa porta. Nosso
+                objetivo é fornecer um atendimento personalizado, orientando você em relação às
+                necessidades específicas da sua moto e explicando cada etapa do processo de
+                reparo. Queremos que você se sinta confiante de que sua moto está em mãos
+                seguras e que receberá o melhor serviço possível.
+              </p>
+              <p>
+                Estamos ansiosos para recebê-lo em nossa oficina e mostrar por que a Aryá
+                Mecânica é a escolha certa para cuidar da sua motocicleta. Conte conosco para
+                manter sua moto no melhor estado e proporcionar uma experiência de condução
+                excepcional.
+              </p>
+            </div>
+          </article>
+
+          <a class="button button--primary" href="#contato">
+            Fale conosco pelo WhatsApp
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="media-strip" aria-label="Vídeo da oficina Aryá Mecânica">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="aryamecanica files/backarya.mp4" type="video/mp4">
+        </video>
+      </section>
+
+      <section class="contact metal-section metal-section--light" id="contato" aria-labelledby="contact-title">
+        <div class="contact__moto" aria-hidden="true">
+          <img src="aryamecanica files/pngwing.com (13).png" alt="">
+        </div>
+
+        <div class="section-shell section-shell--card">
+          <div class="content-card content-card--contact">
+            <header class="section-heading">
+              <h2 id="contact-title">Encontre a gente</h2>
+              <span aria-hidden="true"></span>
+            </header>
+
+            <div class="contact-grid">
+              <address class="contact-info">
+                <p>
+                  R. Marilândia, 82 - Freguesia<br>
+                  Do Ó, São Paulo - SP,<br>
+                  CEP 02802-070
+                </p>
+                <p>
+                  <a href="mailto:aryamecanica@gmail.com">aryamecanica@gmail.com</a>
+                </p>
+                <p class="contact-info__label">Horário de funcionamento:</p>
+                <p>Seg - Sex: 9:00 - 18:00</p>
+              </address>
+
+              <form class="contact-form" action="mailto:aryamecanica@gmail.com" method="post" enctype="text/plain">
+                <label>
+                  Nome
+                  <input type="text" name="nome" autocomplete="given-name">
+                </label>
+                <label>
+                  Sobrenome
+                  <input type="text" name="sobrenome" autocomplete="family-name">
+                </label>
+                <label>
+                  Email <span aria-hidden="true">*</span>
+                  <input type="email" name="email" autocomplete="email" required>
+                </label>
+                <label>
+                  Telefone
+                  <input type="tel" name="telefone" autocomplete="tel">
+                </label>
+                <label>
+                  Mensagem
+                  <textarea name="mensagem" rows="7"></textarea>
+                </label>
+                <button class="button button--submit" type="submit">Enviar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="social-list social-list--footer" aria-label="Redes sociais">
+        <a class="social-link social-link--youtube" href="#" aria-label="YouTube"></a>
+        <a class="social-link social-link--facebook" href="#" aria-label="Facebook"></a>
+        <a class="social-link social-link--instagram" href="#" aria-label="Instagram"></a>
+      </div>
+      <p>© 2023 Direitos Reservados. Criado orgulhosamente por Loveh Lolah</p>
+    </footer>
+
+    <a class="floating-whatsapp" href="#contato" aria-label="Fale conosco pelo WhatsApp">
+      <img src="aryamecanica files/pngwing.com (28).png" alt="">
+    </a>
+
+    <script src="script.js"></script>
+  </body>
+</html>
