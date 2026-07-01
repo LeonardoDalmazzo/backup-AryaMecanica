@@ -58,6 +58,7 @@
   --z-header: 20;
   --z-menu: 50;
   --z-floating: 30;
+  --z-lightbox: 70;
 
   --image-hero: url("aryamecanica files/capar.png");
   --image-metal: url("aryamecanica files/placa-de-diamante-negro.jpg");
@@ -86,6 +87,10 @@ body {
 }
 
 body.is-menu-open {
+  overflow: hidden;
+}
+
+body.is-lightbox-open {
   overflow: hidden;
 }
 
@@ -125,6 +130,10 @@ a {
 
 address {
   font-style: normal;
+}
+
+[hidden] {
+  display: none !important;
 }
 
 section {
@@ -579,10 +588,170 @@ section {
   margin-top: var(--space-12);
 }
 
+.work-gallery__item {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  cursor: zoom-in;
+  background: var(--color-black);
+}
+
+.work-gallery__item::after {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  content: "";
+  background: rgb(0 0 0 / 0);
+  transition: background var(--duration-base) var(--ease-base);
+}
+
+.work-gallery__item:hover::after,
+.work-gallery__item:focus-visible::after {
+  background: rgb(0 0 0 / 0.22);
+}
+
+.work-gallery__item:focus-visible {
+  z-index: 1;
+  outline: 0.1875rem solid var(--color-accent);
+  outline-offset: -0.1875rem;
+}
+
 .work-gallery img {
   width: 100%;
   aspect-ratio: 573 / 340;
   object-fit: cover;
+  transition: transform var(--duration-base) var(--ease-base);
+}
+
+.work-gallery__item:hover img,
+.work-gallery__item:focus-visible img {
+  transform: scale(1.035);
+}
+
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-lightbox);
+  display: grid;
+  place-items: center;
+  padding: var(--space-16) var(--space-4) var(--space-8);
+  color: var(--color-white);
+  background: rgb(0 0 0 / 0.9);
+}
+
+.image-lightbox__figure {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-4);
+  width: 100%;
+  min-width: 0;
+  padding-inline: clamp(var(--space-6), 8vw, var(--space-12));
+}
+
+.image-lightbox__figure img {
+  width: auto;
+  max-width: 100%;
+  max-height: min(76vh, 52rem);
+  object-fit: contain;
+  box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 0.42);
+}
+
+.image-lightbox__figure figcaption {
+  max-width: 48rem;
+  color: rgb(255 255 255 / 0.78);
+  font-size: var(--text-sm);
+  line-height: 1.4;
+  text-align: center;
+}
+
+.image-lightbox__close,
+.image-lightbox__control {
+  position: relative;
+  display: grid;
+  place-items: center;
+  color: var(--color-white);
+  border-radius: 50%;
+  transition:
+    background var(--duration-fast) var(--ease-base),
+    transform var(--duration-fast) var(--ease-base);
+}
+
+.image-lightbox__close:hover,
+.image-lightbox__close:focus-visible,
+.image-lightbox__control:hover,
+.image-lightbox__control:focus-visible {
+  background: rgb(255 255 255 / 0.14);
+}
+
+.image-lightbox__close:focus-visible,
+.image-lightbox__control:focus-visible {
+  outline: 0.125rem solid var(--color-white);
+  outline-offset: 0.1875rem;
+}
+
+.image-lightbox__close {
+  position: absolute;
+  top: var(--space-5);
+  right: var(--space-5);
+  width: 3rem;
+  height: 3rem;
+}
+
+.image-lightbox__close::before,
+.image-lightbox__close::after {
+  position: absolute;
+  width: 2rem;
+  height: 0.1875rem;
+  content: "";
+  background: currentColor;
+  border-radius: var(--radius-pill);
+}
+
+.image-lightbox__close::before {
+  transform: rotate(45deg);
+}
+
+.image-lightbox__close::after {
+  transform: rotate(-45deg);
+}
+
+.image-lightbox__control {
+  position: absolute;
+  top: 50%;
+  width: 3rem;
+  height: 3rem;
+  transform: translateY(-50%);
+}
+
+.image-lightbox__control:hover,
+.image-lightbox__control:focus-visible {
+  transform: translateY(-50%) scale(1.06);
+}
+
+.image-lightbox__control::before {
+  width: 1.25rem;
+  height: 1.25rem;
+  content: "";
+  border-right: 0.1875rem solid currentColor;
+  border-bottom: 0.1875rem solid currentColor;
+}
+
+.image-lightbox__control--prev::before {
+  transform: translateX(0.25rem) rotate(135deg);
+}
+
+.image-lightbox__control--prev {
+  left: var(--space-2);
+}
+
+.image-lightbox__control--next::before {
+  transform: translateX(-0.25rem) rotate(-45deg);
+}
+
+.image-lightbox__control--next {
+  right: var(--space-2);
 }
 
 .about {

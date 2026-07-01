@@ -151,13 +151,25 @@
             </p>
           </header>
 
-          <div class="work-gallery" aria-label="Fotos da oficina e serviços Aryá Mecânica">
-            <img src="aryamecanica files/Ar1.png" alt="Bancada técnica da oficina Aryá Mecânica">
-            <img src="aryamecanica files/Ar2-1.png" alt="Painel de ferramentas organizadas">
-            <img src="aryamecanica files/Ar2-0011.png" alt="Medição técnica em motocicleta">
-            <img src="aryamecanica files/Ar4.png" alt="Motocicleta Triumph em manutenção">
-            <img src="aryamecanica files/Ar3.png" alt="Motocicleta desmontada na oficina">
-            <img src="aryamecanica files/Ar2-0022.png" alt="Teste de fluido de freio em motocicleta">
+          <div class="work-gallery" aria-label="Fotos da oficina e serviços Aryá Mecânica" data-lightbox-gallery>
+            <button class="work-gallery__item" type="button" data-lightbox-open>
+              <img src="aryamecanica files/Ar1.png" alt="Bancada técnica da oficina Aryá Mecânica">
+            </button>
+            <button class="work-gallery__item" type="button" data-lightbox-open>
+              <img src="aryamecanica files/Ar2-1.png" alt="Painel de ferramentas organizadas">
+            </button>
+            <button class="work-gallery__item" type="button" data-lightbox-open>
+              <img src="aryamecanica files/Ar2-0011.png" alt="Medição técnica em motocicleta">
+            </button>
+            <button class="work-gallery__item" type="button" data-lightbox-open>
+              <img src="aryamecanica files/Ar4.png" alt="Motocicleta Triumph em manutenção">
+            </button>
+            <button class="work-gallery__item" type="button" data-lightbox-open>
+              <img src="aryamecanica files/Ar3.png" alt="Motocicleta desmontada na oficina">
+            </button>
+            <button class="work-gallery__item" type="button" data-lightbox-open>
+              <img src="aryamecanica files/Ar2-0022.png" alt="Teste de fluido de freio em motocicleta">
+            </button>
           </div>
         </div>
       </section>
@@ -302,6 +314,34 @@
     >
       <img src="aryamecanica files/pngwing.com (28).png" alt="">
     </a>
+
+    <div
+      class="image-lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Imagem ampliada"
+      aria-hidden="true"
+      hidden
+      data-lightbox
+    >
+      <button class="image-lightbox__close" type="button" aria-label="Fechar imagem ampliada" data-lightbox-close></button>
+      <button
+        class="image-lightbox__control image-lightbox__control--prev"
+        type="button"
+        aria-label="Imagem anterior"
+        data-lightbox-prev
+      ></button>
+      <figure class="image-lightbox__figure">
+        <img alt="" data-lightbox-image>
+        <figcaption data-lightbox-caption></figcaption>
+      </figure>
+      <button
+        class="image-lightbox__control image-lightbox__control--next"
+        type="button"
+        aria-label="Proxima imagem"
+        data-lightbox-next
+      ></button>
+    </div>
 
     <script src="script.js"></script>
   </body>
