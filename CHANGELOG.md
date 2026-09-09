@@ -6,6 +6,32 @@ Todas as mudancas relevantes deste projeto sao registradas neste arquivo. O proj
 
 - Nenhuma mudanca versionada.
 
+## v1.1.0 - 2026-09-09
+
+### Metadados
+
+- Tag: `v1.1.0`.
+- Artefato: `deploy/aryamecanica-site-hostgator-v1.1.0.zip`.
+
+### Funcionalidades
+
+- Envia o formulario de contato pelo servidor da hospedagem para `aryamecanica@gmail.com`.
+
+### Correcoes
+
+- Substitui o envio inseguro por `mailto:` por uma requisicao HTTPS ao proprio dominio.
+- Adiciona validacao no navegador e no servidor, feedback de envio, limite de frequencia e campo antispam.
+
+### Desempenho
+
+- Otimiza e dimensiona as imagens para os tamanhos usados na pagina.
+- Adia o carregamento da galeria e do video ate que o visitante se aproxime dessas secoes.
+- Habilita cache, compressao e preload responsivo da imagem principal.
+
+### Seguranca
+
+- Forca HTTPS e adiciona cabecalhos de seguranca no Apache.
+
 ## v1.0.0 - 2026-09-09
 
 ### Metadados

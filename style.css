@@ -9,6 +9,8 @@
   --color-accent: #f06416;
   --color-accent-strong: #db4c08;
   --color-mobile-active: #d39797;
+  --color-success: #18753c;
+  --color-danger: #a82922;
 
   --font-base: "Arial Narrow", "Roboto Condensed", "Segoe UI", Arial, sans-serif;
   --font-body: "Segoe UI", Arial, sans-serif;
@@ -60,8 +62,8 @@
   --z-floating: 30;
   --z-lightbox: 70;
 
-  --image-hero: url("aryamecanica files/capar.png");
-  --image-metal: url("aryamecanica files/placa-de-diamante-negro.jpg");
+  --image-hero: url("aryamecanica files/capar-820.jpg");
+  --image-metal: url("aryamecanica files/metal-960.jpg");
 }
 
 *,
@@ -863,14 +865,27 @@ section {
   gap: var(--space-2);
 }
 
-.contact-form span {
-  color: #b7433d;
+.contact-form__required {
+  color: var(--color-danger);
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
+  padding: 0.625rem 0.75rem;
+  background: var(--color-white);
   border: var(--border-field);
+  border-radius: 0.125rem;
+  transition:
+    border-color var(--duration-fast) var(--ease-base),
+    box-shadow var(--duration-fast) var(--ease-base);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--color-accent-strong);
+  outline: none;
+  box-shadow: 0 0 0 0.1875rem rgb(240 100 22 / 0.2);
 }
 
 .contact-form input {
@@ -880,6 +895,42 @@ section {
 .contact-form textarea {
   min-height: 10.75rem;
   resize: vertical;
+}
+
+.contact-form__honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.contact-form__privacy,
+.contact-form__status {
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+.contact-form__privacy {
+  color: var(--color-text);
+}
+
+.contact-form__status {
+  min-height: 1.5em;
+  font-weight: 600;
+}
+
+.contact-form__status.is-success {
+  color: var(--color-success);
+}
+
+.contact-form__status.is-error {
+  color: var(--color-danger);
+}
+
+.contact-form [type="submit"]:disabled {
+  cursor: wait;
+  opacity: 0.65;
 }
 
 .site-footer {
@@ -912,6 +963,11 @@ section {
 }
 
 @media (min-width: 45rem) {
+  :root {
+    --image-hero: url("aryamecanica files/capar-1640.jpg");
+    --image-metal: url("aryamecanica files/metal-1920.jpg");
+  }
+
   main {
     padding-top: var(--header-height);
   }

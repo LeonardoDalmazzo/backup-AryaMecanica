@@ -10,6 +10,10 @@ const lightboxCaption = document.querySelector("[data-lightbox-caption]");
 const lightboxClose = document.querySelector("[data-lightbox-close]");
 const lightboxPrev = document.querySelector("[data-lightbox-prev]");
 const lightboxNext = document.querySelector("[data-lightbox-next]");
+const lazyVideo = document.querySelector("[data-lazy-video]");
+const contactForm = document.querySelector("[data-contact-form]");
+const contactFormStatus = document.querySelector("[data-form-status]");
+const contactFormSubmit = document.querySelector("[data-form-submit]");
 
 let closeTimer;
 let activeLightboxIndex = 0;
@@ -99,6 +103,108 @@ document.addEventListener("keydown", (event) => {
   } else if (!event.shiftKey && document.activeElement === lastItem) {
     event.preventDefault();
     firstItem.focus();
+  }
+});
+
+const loadVideo = () => {
+  if (!lazyVideo || lazyVideo.dataset.loaded === "true") return;
+
+  const source = lazyVideo.querySelector("source[data-src]");
+  if (!source) return;
+
+  source.src = source.dataset.src;
+  source.removeAttribute("data-src");
+  lazyVideo.dataset.loaded = "true";
+  lazyVideo.load();
+  lazyVideo.play().catch(() => {
+    // A reproducao automatica pode ser bloqueada pelas preferencias do navegador.
+  });
+};
+
+if (lazyVideo) {
+  if ("IntersectionObserver" in window) {
+    const videoObserver = new IntersectionObserver(
+      (entries, observer) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+
+        loadVideo();
+        observer.disconnect();
+      },
+      { rootMargin: "400px 0px" },
+    );
+
+    videoObserver.observe(lazyVideo);
+  } else {
+    window.addEventListener(
+      "load",
+      () => {
+        if (desktopQuery.matches) loadVideo();
+      },
+      { once: true },
+    );
+  }
+}
+
+const setContactFormStatus = (message, type = "") => {
+  if (!contactFormStatus) return;
+
+  contactFormStatus.textContent = message;
+  contactFormStatus.classList.toggle("is-success", type === "success");
+  contactFormStatus.classList.toggle("is-error", type === "error");
+};
+
+const contactResult = new URLSearchParams(window.location.search).get("contato");
+
+if (contactResult === "sucesso") {
+  setContactFormStatus("Mensagem enviada com sucesso. Entraremos em contato em breve.", "success");
+} else if (contactResult === "erro") {
+  setContactFormStatus("Nao foi possivel enviar agora. Tente novamente ou fale pelo WhatsApp.", "error");
+}
+
+if (contactResult && window.history.replaceState) {
+  const cleanUrl = new URL(window.location.href);
+  cleanUrl.searchParams.delete("contato");
+  window.history.replaceState({}, "", `${cleanUrl.pathname}${cleanUrl.search}${cleanUrl.hash}`);
+}
+
+contactForm?.addEventListener("submit", async (event) => {
+  if (!("fetch" in window)) return;
+
+  event.preventDefault();
+  setContactFormStatus("Enviando mensagem...");
+
+  if (contactFormSubmit) {
+    contactFormSubmit.disabled = true;
+    contactFormSubmit.setAttribute("aria-busy", "true");
+  }
+
+  try {
+    const response = await fetch(contactForm.action, {
+      method: "POST",
+      body: new FormData(contactForm),
+      headers: {
+        Accept: "application/json",
+        "X-Requested-With": "XMLHttpRequest",
+      },
+    });
+    const payload = await response.json().catch(() => ({}));
+
+    if (!response.ok || !payload.success) {
+      throw new Error(payload.message || "Nao foi possivel enviar a mensagem.");
+    }
+
+    contactForm.reset();
+    setContactFormStatus(payload.message, "success");
+  } catch (error) {
+    setContactFormStatus(
+      error instanceof Error ? error.message : "Nao foi possivel enviar agora. Tente novamente.",
+      "error",
+    );
+  } finally {
+    if (contactFormSubmit) {
+      contactFormSubmit.disabled = false;
+      contactFormSubmit.removeAttribute("aria-busy");
+    }
   }
 });
 

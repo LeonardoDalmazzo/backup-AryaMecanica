@@ -18,6 +18,8 @@ $itensPublicacao = @(
     'index.html'
     'style.css'
     'script.js'
+    'enviar-contato.php'
+    '.htaccess'
     'aryamecanica files'
 )
 
@@ -25,10 +27,23 @@ $entradasObrigatorias = @(
     'index.html'
     'style.css'
     'script.js'
+    'enviar-contato.php'
+    '.htaccess'
     'aryamecanica files/REDLOGO (1).png'
     'aryamecanica files/backarya.mp4'
-    'aryamecanica files/capar.png'
+    'aryamecanica files/capar-820.jpg'
+    'aryamecanica files/capar-1640.jpg'
     'aryamecanica files/faviconam.png'
+    'aryamecanica files/metal-960.jpg'
+    'aryamecanica files/metal-1920.jpg'
+    'aryamecanica files/Ar1.jpg'
+    'aryamecanica files/Ar2-1.jpg'
+    'aryamecanica files/Ar2-0011.jpg'
+    'aryamecanica files/Ar2-0022.jpg'
+    'aryamecanica files/Ar3.jpg'
+    'aryamecanica files/Ar4.jpg'
+    'aryamecanica files/pngwing.com (13).png'
+    'aryamecanica files/pngwing.com (28).png'
 )
 
 foreach ($item in $itensPublicacao) {

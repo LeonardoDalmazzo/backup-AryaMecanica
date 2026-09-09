@@ -9,7 +9,21 @@
     >
     <title>Aryá Mecânica</title>
     <link rel="icon" href="aryamecanica files/faviconam.png">
-    <link rel="stylesheet" href="style.css">
+    <link
+      rel="preload"
+      as="image"
+      href="aryamecanica files/capar-820.jpg"
+      media="(max-width: 44.99rem)"
+      fetchpriority="high"
+    >
+    <link
+      rel="preload"
+      as="image"
+      href="aryamecanica files/capar-1640.jpg"
+      media="(min-width: 45rem)"
+      fetchpriority="high"
+    >
+    <link rel="stylesheet" href="style.css?v=1.1.0">
   </head>
   <body>
     <header class="site-header">
@@ -69,6 +83,10 @@
             class="hero__logo"
             src="aryamecanica files/REDLOGO (1).png"
             alt="Aryá Mecânica"
+            width="384"
+            height="384"
+            decoding="async"
+            fetchpriority="high"
           >
           <h1 id="hero-title">Precisão &amp; excelência</h1>
           <p>Especialista em motos</p>
@@ -153,22 +171,22 @@
 
           <div class="work-gallery" aria-label="Fotos da oficina e serviços Aryá Mecânica" data-lightbox-gallery>
             <button class="work-gallery__item" type="button" data-lightbox-open>
-              <img src="aryamecanica files/Ar1.png" alt="Bancada técnica da oficina Aryá Mecânica">
+              <img src="aryamecanica files/Ar1.jpg" alt="Bancada técnica da oficina Aryá Mecânica" width="915" height="539" loading="lazy" decoding="async">
             </button>
             <button class="work-gallery__item" type="button" data-lightbox-open>
-              <img src="aryamecanica files/Ar2-1.png" alt="Painel de ferramentas organizadas">
+              <img src="aryamecanica files/Ar2-1.jpg" alt="Painel de ferramentas organizadas" width="915" height="539" loading="lazy" decoding="async">
             </button>
             <button class="work-gallery__item" type="button" data-lightbox-open>
-              <img src="aryamecanica files/Ar2-0011.png" alt="Medição técnica em motocicleta">
+              <img src="aryamecanica files/Ar2-0011.jpg" alt="Medição técnica em motocicleta" width="915" height="539" loading="lazy" decoding="async">
             </button>
             <button class="work-gallery__item" type="button" data-lightbox-open>
-              <img src="aryamecanica files/Ar4.png" alt="Motocicleta Triumph em manutenção">
+              <img src="aryamecanica files/Ar4.jpg" alt="Motocicleta Triumph em manutenção" width="915" height="539" loading="lazy" decoding="async">
             </button>
             <button class="work-gallery__item" type="button" data-lightbox-open>
-              <img src="aryamecanica files/Ar3.png" alt="Motocicleta desmontada na oficina">
+              <img src="aryamecanica files/Ar3.jpg" alt="Motocicleta desmontada na oficina" width="915" height="539" loading="lazy" decoding="async">
             </button>
             <button class="work-gallery__item" type="button" data-lightbox-open>
-              <img src="aryamecanica files/Ar2-0022.png" alt="Teste de fluido de freio em motocicleta">
+              <img src="aryamecanica files/Ar2-0022.jpg" alt="Teste de fluido de freio em motocicleta" width="915" height="539" loading="lazy" decoding="async">
             </button>
           </div>
         </div>
@@ -236,14 +254,14 @@
       </section>
 
       <section class="media-strip" aria-label="Vídeo da oficina Aryá Mecânica">
-        <video autoplay muted loop playsinline preload="metadata">
-          <source src="aryamecanica files/backarya.mp4" type="video/mp4">
+        <video muted loop playsinline preload="none" data-lazy-video>
+          <source data-src="aryamecanica files/backarya.mp4" type="video/mp4">
         </video>
       </section>
 
       <section class="contact metal-section metal-section--light" id="contato" aria-labelledby="contact-title">
         <div class="contact__moto" aria-hidden="true">
-          <img src="aryamecanica files/pngwing.com (13).png" alt="">
+          <img src="aryamecanica files/pngwing.com (13).png" alt="" width="1000" height="744" loading="lazy" decoding="async">
         </div>
 
         <div class="section-shell section-shell--card">
@@ -267,28 +285,34 @@
                 <p>Seg - Sex: 9:00 - 18:00</p>
               </address>
 
-              <form class="contact-form" action="mailto:aryamecanica@gmail.com" method="post" enctype="text/plain">
-                <label>
-                  Nome
-                  <input type="text" name="nome" autocomplete="given-name">
+              <form class="contact-form" action="enviar-contato.php" method="post" accept-charset="UTF-8" autocomplete="on" data-contact-form>
+                <label for="contact-name">
+                  Nome <span class="contact-form__required" aria-hidden="true">*</span>
+                  <input id="contact-name" type="text" name="nome" autocomplete="section-contact given-name" maxlength="80" required>
                 </label>
-                <label>
+                <label for="contact-last-name">
                   Sobrenome
-                  <input type="text" name="sobrenome" autocomplete="family-name">
+                  <input id="contact-last-name" type="text" name="sobrenome" autocomplete="section-contact family-name" maxlength="80">
                 </label>
-                <label>
-                  Email <span aria-hidden="true">*</span>
-                  <input type="email" name="email" autocomplete="email" required>
+                <label for="contact-email">
+                  Email <span class="contact-form__required" aria-hidden="true">*</span>
+                  <input id="contact-email" type="email" name="email" autocomplete="section-contact email" inputmode="email" maxlength="254" spellcheck="false" required>
                 </label>
-                <label>
+                <label for="contact-phone">
                   Telefone
-                  <input type="tel" name="telefone" autocomplete="tel">
+                  <input id="contact-phone" type="tel" name="telefone" autocomplete="section-contact tel" inputmode="tel" maxlength="20">
                 </label>
-                <label>
-                  Mensagem
-                  <textarea name="mensagem" rows="7"></textarea>
+                <label for="contact-message">
+                  Mensagem <span class="contact-form__required" aria-hidden="true">*</span>
+                  <textarea id="contact-message" name="mensagem" rows="7" minlength="10" maxlength="2000" autocomplete="off" required></textarea>
                 </label>
-                <button class="button button--submit" type="submit">Enviar</button>
+                <label class="contact-form__honeypot" for="contact-website" aria-hidden="true">
+                  Não preencha este campo
+                  <input id="contact-website" type="text" name="website" tabindex="-1" autocomplete="off">
+                </label>
+                <p class="contact-form__privacy">Seus dados serão usados somente para responder a esta solicitação.</p>
+                <p class="contact-form__status" role="status" aria-live="polite" data-form-status></p>
+                <button class="button button--submit" type="submit" data-form-submit>Enviar mensagem</button>
               </form>
             </div>
           </div>
@@ -312,7 +336,7 @@
       rel="noopener"
       aria-label="Fale conosco pelo WhatsApp"
     >
-      <img src="aryamecanica files/pngwing.com (28).png" alt="">
+      <img src="aryamecanica files/pngwing.com (28).png" alt="" width="160" height="160" decoding="async">
     </a>
 
     <div
@@ -343,6 +367,6 @@
       ></button>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=1.1.0"></script>
   </body>
 </html>
