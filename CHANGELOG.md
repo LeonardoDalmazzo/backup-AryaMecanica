@@ -6,6 +6,18 @@ Todas as mudancas relevantes deste projeto sao registradas neste arquivo. O proj
 
 - Nenhuma mudanca versionada.
 
+## v1.1.2 - 2026-09-09
+
+### Metadados
+
+- Tag: `v1.1.2`.
+- Artefato: `deploy/aryamecanica-site-hostgator-v1.1.2.zip`.
+
+### Correcoes
+
+- Aumenta o contraste e o peso visual dos links do menu principal.
+- Atualiza a versao dos arquivos CSS e JavaScript para invalidar o cache anterior.
+
 ## v1.1.1 - 2026-09-09
 
 ### Metadados
