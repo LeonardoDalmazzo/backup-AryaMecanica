@@ -43,7 +43,6 @@ $entradasObrigatorias = @(
     'aryamecanica files/Ar3.jpg'
     'aryamecanica files/Ar4.jpg'
     'aryamecanica files/pngwing.com (13).png'
-    'aryamecanica files/pngwing.com (28).png'
 )
 
 foreach ($item in $itensPublicacao) {
