@@ -3,6 +3,7 @@ const openButton = document.querySelector("[data-menu-open]");
 const closeButton = document.querySelector("[data-menu-close]");
 const internalLinks = document.querySelectorAll('a[href^="#"]');
 const desktopQuery = window.matchMedia("(min-width: 45rem)");
+const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 const galleryButtons = Array.from(document.querySelectorAll("[data-lightbox-open]"));
 const lightbox = document.querySelector("[data-lightbox]");
 const lightboxImage = document.querySelector("[data-lightbox-image]");
@@ -11,13 +12,16 @@ const lightboxClose = document.querySelector("[data-lightbox-close]");
 const lightboxPrev = document.querySelector("[data-lightbox-prev]");
 const lightboxNext = document.querySelector("[data-lightbox-next]");
 const lazyVideo = document.querySelector("[data-lazy-video]");
+const videoStrip = lazyVideo?.closest(".media-strip");
 const contactForm = document.querySelector("[data-contact-form]");
 const contactFormStatus = document.querySelector("[data-form-status]");
 const contactFormSubmit = document.querySelector("[data-form-submit]");
+const scrollToTopButton = document.querySelector("[data-scroll-top]");
 
 let closeTimer;
 let activeLightboxIndex = 0;
 let lastFocusedElement = null;
+let viewportEffectsFrame = 0;
 
 const focusableSelector = [
   "a[href]",
@@ -105,6 +109,62 @@ document.addEventListener("keydown", (event) => {
     firstItem.focus();
   }
 });
+
+const updateVideoParallax = () => {
+  if (!videoStrip || !lazyVideo) return;
+
+  if (!desktopQuery.matches || reducedMotionQuery.matches) {
+    videoStrip.style.setProperty("--video-parallax-offset", "0px");
+    return;
+  }
+
+  const bounds = videoStrip.getBoundingClientRect();
+
+  if (bounds.bottom < 0 || bounds.top > window.innerHeight) return;
+
+  const sectionCenter = bounds.top + bounds.height / 2;
+  const distanceFromCenter = window.innerHeight / 2 - sectionCenter;
+  const offset = Math.max(-72, Math.min(72, distanceFromCenter * 0.14));
+
+  videoStrip.style.setProperty("--video-parallax-offset", `${offset.toFixed(2)}px`);
+};
+
+const updateScrollToTopVisibility = () => {
+  if (!scrollToTopButton) return;
+
+  scrollToTopButton.hidden = window.scrollY < Math.max(360, window.innerHeight * 0.5);
+};
+
+const updateViewportEffects = () => {
+  viewportEffectsFrame = 0;
+  updateVideoParallax();
+  updateScrollToTopVisibility();
+};
+
+const requestViewportEffectsUpdate = () => {
+  if (viewportEffectsFrame) return;
+
+  viewportEffectsFrame = window.requestAnimationFrame(updateViewportEffects);
+};
+
+window.addEventListener("scroll", requestViewportEffectsUpdate, { passive: true });
+window.addEventListener("resize", requestViewportEffectsUpdate);
+window.addEventListener("load", requestViewportEffectsUpdate, { once: true });
+
+scrollToTopButton?.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: reducedMotionQuery.matches ? "auto" : "smooth",
+  });
+});
+
+if (typeof reducedMotionQuery.addEventListener === "function") {
+  reducedMotionQuery.addEventListener("change", requestViewportEffectsUpdate);
+} else {
+  reducedMotionQuery.addListener(requestViewportEffectsUpdate);
+}
+
+requestViewportEffectsUpdate();
 
 const loadVideo = () => {
   if (!lazyVideo || lazyVideo.dataset.loaded === "true") return;

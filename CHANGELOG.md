@@ -6,6 +6,24 @@ Todas as mudancas relevantes deste projeto sao registradas neste arquivo. O proj
 
 - Nenhuma mudanca versionada.
 
+## v1.2.0 - 2026-09-10
+
+### Metadados
+
+- Tag: `v1.2.0`.
+- Artefato: `deploy/aryamecanica-site-hostgator-v1.2.0.zip`.
+
+### Interface
+
+- Moderniza a area de contato com cartao de informacoes, icones e hierarquia visual mais clara.
+- Reorganiza o formulario em uma coluna no mobile, pares de campos no tablet e duas areas equilibradas em telas maiores.
+- Adiciona um botao laranja do WhatsApp ao cartao de contato e remove o atalho duplicado da secao institucional.
+- Substitui o atalho flutuante do WhatsApp por um botao de retorno ao topo.
+
+### Experiencia
+
+- Restaura o efeito parallax da faixa de video com suporte a preferencia de movimento reduzido.
+
 ## v1.1.2 - 2026-09-09
 
 ### Metadados
