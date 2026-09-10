@@ -25,13 +25,13 @@ As mudancas da versao devem ser registradas em `CHANGELOG.md` antes da publicaca
 Na raiz do projeto, execute o script informando a versao sem o prefixo `v`:
 
 ```powershell
-.\scripts\gerar-deploy.ps1 -Versao 1.1.2
+.\scripts\gerar-deploy.ps1 -Versao 1.2.0
 ```
 
 Se a politica local do Windows bloquear scripts, execute sem alterar a configuracao do sistema:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\gerar-deploy.ps1 -Versao 1.1.2
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\gerar-deploy.ps1 -Versao 1.2.0
 ```
 
 O gerador valida o formato da versao, recusa sobrescrever um pacote existente e verifica se os arquivos obrigatorios estao presentes no ZIP. Use uma versao nova para cada publicacao.
