@@ -28,6 +28,10 @@
   <body>
     <header class="site-header">
       <nav class="site-nav" aria-label="Navegação principal">
+        <a class="site-nav__brand" href="#home" aria-label="Aryá Mecânica — página inicial">
+          <span>Aryá</span> Mecânica
+        </a>
+
         <button
           class="menu-toggle"
           type="button"
@@ -46,19 +50,12 @@
           <li><a href="#servicos">Serviços</a></li>
           <li><a href="#trabalho">Nosso trabalho</a></li>
           <li><a href="#quem-somos">Quem somos</a></li>
-          <li><a href="#contato">Contato</a></li>
+          <li><a class="site-nav__contact" href="#contato">Contato</a></li>
         </ul>
       </nav>
     </header>
 
     <div class="mobile-menu" id="mobile-menu" hidden data-mobile-menu>
-      <button
-        class="mobile-menu__close"
-        type="button"
-        aria-label="Fechar menu"
-        data-menu-close
-      ></button>
-
       <nav class="mobile-menu__nav" aria-label="Navegação mobile">
         <ul>
           <li><a href="#home">Home</a></li>
