@@ -6,6 +6,28 @@ Todas as mudancas relevantes deste projeto sao registradas neste arquivo. O proj
 
 - Nenhuma mudanca versionada.
 
+## v1.3.0 - 2026-09-15
+
+### Metadados
+
+- Tag prevista apos o merge em `main`: `v1.3.0`.
+- Artefato: `deploy/aryamecanica-site-hostgator-v1.3.0.zip`.
+
+### Funcionalidades
+
+- Moderniza o cabecalho com a marca da oficina, destaque para contato e estado visual durante a rolagem.
+- Reorganiza o menu responsivo com um unico botao de abertura e fechamento, ciclo de foco e suporte a movimento reduzido.
+- Adiciona um rodape responsivo com marca, navegacao, redes sociais e direitos reservados atualizados.
+
+### Correcoes
+
+- Direciona os links sociais do menu, destaque e rodape aos perfis da oficina no YouTube, Facebook e Instagram.
+- Atualiza a versao dos arquivos CSS e JavaScript para invalidar o cache da publicacao anterior.
+
+### Documentacao
+
+- Registra em `AGENTS.md` os padroes de engenharia, commits granulares, Git Flow e releases semanticas.
+
 ## v1.2.0 - 2026-09-10
 
 ### Metadados
