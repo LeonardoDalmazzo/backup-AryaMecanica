@@ -1,6 +1,6 @@
 const menu = document.querySelector("[data-mobile-menu]");
 const openButton = document.querySelector("[data-menu-open]");
-const closeButton = document.querySelector("[data-menu-close]");
+const siteHeader = document.querySelector(".site-header");
 const internalLinks = document.querySelectorAll('a[href^="#"]');
 const desktopQuery = window.matchMedia("(min-width: 45rem)");
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -45,7 +45,8 @@ const setMenuState = (isOpen) => {
       menu.classList.add("is-open");
       document.body.classList.add("is-menu-open");
       openButton.setAttribute("aria-expanded", "true");
-      closeButton?.focus();
+      openButton.setAttribute("aria-label", "Fechar menu");
+      menu.querySelector("a")?.focus();
     });
     return;
   }
@@ -53,6 +54,7 @@ const setMenuState = (isOpen) => {
   menu.classList.remove("is-open");
   document.body.classList.remove("is-menu-open");
   openButton.setAttribute("aria-expanded", "false");
+  openButton.setAttribute("aria-label", "Abrir menu");
   closeTimer = window.setTimeout(() => {
     menu.hidden = true;
     menu.setAttribute("aria-hidden", "true");
@@ -64,8 +66,6 @@ menu?.setAttribute("aria-hidden", "true");
 openButton?.addEventListener("click", () => {
   setMenuState(!isMenuOpen());
 });
-
-closeButton?.addEventListener("click", () => setMenuState(false));
 
 internalLinks.forEach((link) => {
   link.addEventListener("click", () => {
@@ -92,8 +92,8 @@ document.addEventListener("keydown", (event) => {
 
   if (event.key !== "Tab") return;
 
-  const focusableItems = Array.from(menu.querySelectorAll(focusableSelector)).filter(
-    (item) => !item.hasAttribute("disabled") && item.getAttribute("aria-hidden") !== "true",
+  const focusableItems = [openButton, ...menu.querySelectorAll(focusableSelector)].filter(
+    (item) => item && !item.hasAttribute("disabled") && item.getAttribute("aria-hidden") !== "true",
   );
 
   if (focusableItems.length === 0) return;
@@ -135,10 +135,15 @@ const updateScrollToTopVisibility = () => {
   scrollToTopButton.hidden = window.scrollY < Math.max(360, window.innerHeight * 0.5);
 };
 
+const updateHeaderState = () => {
+  siteHeader?.classList.toggle("is-scrolled", window.scrollY > 16);
+};
+
 const updateViewportEffects = () => {
   viewportEffectsFrame = 0;
   updateVideoParallax();
   updateScrollToTopVisibility();
+  updateHeaderState();
 };
 
 const requestViewportEffectsUpdate = () => {
