@@ -10,7 +10,7 @@ Todas as mudancas relevantes deste projeto sao registradas neste arquivo. O proj
 
 ### Metadados
 
-- Tag prevista apos o merge em `main`: `v1.3.0`.
+- Tag: `v1.3.0`.
 - Artefato: `deploy/aryamecanica-site-hostgator-v1.3.0.zip`.
 
 ### Funcionalidades
