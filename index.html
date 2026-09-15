@@ -28,6 +28,10 @@
   <body>
     <header class="site-header">
       <nav class="site-nav" aria-label="Navegação principal">
+        <a class="site-nav__brand" href="#home" aria-label="Aryá Mecânica — página inicial">
+          <span>Aryá</span> Mecânica
+        </a>
+
         <button
           class="menu-toggle"
           type="button"
@@ -46,19 +50,12 @@
           <li><a href="#servicos">Serviços</a></li>
           <li><a href="#trabalho">Nosso trabalho</a></li>
           <li><a href="#quem-somos">Quem somos</a></li>
-          <li><a href="#contato">Contato</a></li>
+          <li><a class="site-nav__contact" href="#contato">Contato</a></li>
         </ul>
       </nav>
     </header>
 
     <div class="mobile-menu" id="mobile-menu" hidden data-mobile-menu>
-      <button
-        class="mobile-menu__close"
-        type="button"
-        aria-label="Fechar menu"
-        data-menu-close
-      ></button>
-
       <nav class="mobile-menu__nav" aria-label="Navegação mobile">
         <ul>
           <li><a href="#home">Home</a></li>
@@ -70,9 +67,9 @@
       </nav>
 
       <div class="social-list social-list--menu" aria-label="Redes sociais">
-        <a class="social-link social-link--youtube" href="#contato" aria-label="Ir para contato"></a>
-        <a class="social-link social-link--facebook" href="#contato" aria-label="Ir para contato"></a>
-        <a class="social-link social-link--instagram" href="#contato" aria-label="Ir para contato"></a>
+        <a class="social-link social-link--youtube" href="https://www.youtube.com/@aryamecanicaexcelenciaemme1202" target="_blank" rel="noopener noreferrer" aria-label="Abrir canal da Aryá Mecânica no YouTube"></a>
+        <a class="social-link social-link--facebook" href="https://www.facebook.com/aryamecanica/" target="_blank" rel="noopener noreferrer" aria-label="Abrir página da Aryá Mecânica no Facebook"></a>
+        <a class="social-link social-link--instagram" href="https://www.instagram.com/arya_mecanica/" target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil da Aryá Mecânica no Instagram"></a>
       </div>
     </div>
 
@@ -93,9 +90,9 @@
         </div>
 
         <div class="social-list social-list--hero" aria-label="Redes sociais">
-          <a class="social-link social-link--youtube" href="#contato" aria-label="Ir para contato"></a>
-          <a class="social-link social-link--facebook" href="#contato" aria-label="Ir para contato"></a>
-          <a class="social-link social-link--instagram" href="#contato" aria-label="Ir para contato"></a>
+          <a class="social-link social-link--youtube" href="https://www.youtube.com/@aryamecanicaexcelenciaemme1202" target="_blank" rel="noopener noreferrer" aria-label="Abrir canal da Aryá Mecânica no YouTube"></a>
+          <a class="social-link social-link--facebook" href="https://www.facebook.com/aryamecanica/" target="_blank" rel="noopener noreferrer" aria-label="Abrir página da Aryá Mecânica no Facebook"></a>
+          <a class="social-link social-link--instagram" href="https://www.instagram.com/arya_mecanica/" target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil da Aryá Mecânica no Instagram"></a>
         </div>
       </section>
 
@@ -373,13 +370,38 @@
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="social-list social-list--footer" aria-label="Redes sociais">
-        <a class="social-link social-link--youtube" href="#contato" aria-label="Ir para contato"></a>
-        <a class="social-link social-link--facebook" href="#contato" aria-label="Ir para contato"></a>
-        <a class="social-link social-link--instagram" href="#contato" aria-label="Ir para contato"></a>
+    <footer class="site-footer" id="rodape">
+      <div class="site-footer__inner">
+        <div class="site-footer__brand">
+          <a class="site-footer__wordmark" href="#home" aria-label="Aryá Mecânica — voltar ao início">
+            <span>Aryá</span> Mecânica
+          </a>
+          <p>Precisão, cuidado e excelência para a sua moto.</p>
+        </div>
+
+        <nav class="site-footer__nav" aria-label="Navegação do rodapé">
+          <p class="site-footer__title">Navegue</p>
+          <ul>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#trabalho">Nosso trabalho</a></li>
+            <li><a href="#quem-somos">Quem somos</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+
+        <div class="site-footer__social">
+          <p class="site-footer__title">Acompanhe a Aryá</p>
+          <div class="social-list social-list--footer" aria-label="Redes sociais">
+            <a class="social-link social-link--youtube" href="https://www.youtube.com/@aryamecanicaexcelenciaemme1202" target="_blank" rel="noopener noreferrer" aria-label="Abrir canal da Aryá Mecânica no YouTube"></a>
+            <a class="social-link social-link--facebook" href="https://www.facebook.com/aryamecanica/" target="_blank" rel="noopener noreferrer" aria-label="Abrir página da Aryá Mecânica no Facebook"></a>
+            <a class="social-link social-link--instagram" href="https://www.instagram.com/arya_mecanica/" target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil da Aryá Mecânica no Instagram"></a>
+          </div>
+        </div>
       </div>
-      <p>© 2023 Direitos Reservados. Criado orgulhosamente por Loveh Lolah</p>
+
+      <div class="site-footer__bottom">
+        <p>© 2026 Aryá Mecânica, todos os direitos reservados.</p>
+      </div>
     </footer>
 
     <button class="scroll-to-top" type="button" aria-label="Voltar ao topo" hidden data-scroll-top>
