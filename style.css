@@ -58,6 +58,15 @@
 
   --duration-fast: 160ms;
   --duration-base: 240ms;
+  --duration-light-sweep: 700ms;
+  --gradient-light-sweep: linear-gradient(
+    110deg,
+    transparent 30%,
+    rgb(255 255 255 / 0.12) 40%,
+    rgb(255 255 255 / 0.7) 50%,
+    rgb(255 255 255 / 0.12) 60%,
+    transparent 70%
+  );
   --ease-base: ease;
   --z-header: 20;
   --z-menu: 50;
@@ -691,6 +700,38 @@ body.is-menu-open .site-header {
   background: var(--color-ink);
 }
 
+.light-sweep {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.light-sweep__beam {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: var(--gradient-light-sweep);
+  transform: translateX(-100%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .light-sweep:not(:disabled):is(:hover, :focus-visible) > .light-sweep__beam {
+    animation: light-sweep var(--duration-light-sweep) ease-in-out both;
+  }
+}
+
+.light-sweep:focus-visible {
+  outline: 0.125rem solid var(--color-accent);
+  outline-offset: 0.25rem;
+}
+
+@keyframes light-sweep {
+  to {
+    transform: translateX(100%);
+  }
+}
+
 .work {
   padding: var(--space-16) 0 0;
   background: var(--color-white);
@@ -1305,8 +1346,11 @@ body.is-menu-open .site-header {
   border: 0.0625rem solid rgb(255 255 255 / 0.16);
 }
 
+.social-list--hero .social-link:hover,
+.social-list--hero .social-link:focus-visible,
 .social-list--footer .social-link:hover,
 .social-list--footer .social-link:focus-visible {
+  color: var(--color-white);
   background: var(--color-accent);
   border-color: var(--color-accent);
 }
@@ -1545,6 +1589,21 @@ body.is-menu-open .site-header {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .light-sweep > .light-sweep__beam {
+    display: none;
+  }
+
+  .light-sweep,
+  .contact-whatsapp-button.light-sweep,
+  .site-nav__links .site-nav__contact.light-sweep {
+    transition: none;
+  }
+
+  .light-sweep:is(:hover, :focus-visible),
+  .site-nav__links .site-nav__contact.light-sweep:is(:hover, :focus-visible) {
+    transform: none;
+  }
+
   .site-header,
   .site-nav__links a,
   .site-nav__links a::after,

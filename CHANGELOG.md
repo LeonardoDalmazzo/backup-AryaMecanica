@@ -6,6 +6,24 @@ Todas as mudancas relevantes deste projeto sao registradas neste arquivo. O proj
 
 - Nenhuma mudanca versionada.
 
+## v1.4.0 - 2026-09-19
+
+### Metadados
+
+- Estado: pacote preparado para deploy; release em `main` ainda nao publicada.
+- Artefato: `deploy/aryamecanica-site-hostgator-v1.4.0.zip`.
+
+### Funcionalidades
+
+- Adiciona uma faixa de brilho da esquerda para a direita nos botoes sociais da home e do rodape, Contato no header, Leva e Traz, WhatsApp, Enviar mensagem e Voltar ao topo.
+- Mantem o hover laranja do rodape e aplica o mesmo hover aos botoes sociais da home.
+- Ativa o brilho no hover e no foco por teclado, respeitando a preferencia por movimento reduzido e o estado desabilitado do formulario.
+- Preserva o hover original de Home, Servicos, Nosso trabalho e Quem somos.
+
+### Empacotamento
+
+- Atualiza a referencia de cache do CSS para `v1.4.0` e gera o pacote versionado para a HostGator.
+
 ## v1.3.0 - 2026-09-15
 
 ### Metadados
