@@ -6,11 +6,74 @@ Todas as mudancas relevantes deste projeto sao registradas neste arquivo. O proj
 
 - Nenhuma mudanca versionada.
 
+## v1.6.0 - 2026-09-25
+
+### Metadados
+
+- Estado: pacote preparado para deploy; release em `main` ainda nao publicada.
+- Artefato: `deploy/aryamecanica-site-hostgator-v1.6.0.zip`.
+
+### Funcionalidades
+
+- Substitui listas dos cards por botoes que abrem lightboxes de modelos para as oito marcas.
+- Aplica cores por marca no hover e foco dos atalhos, botoes de modelos e links de manutencao.
+- Permite fechar os lightboxes por botao, Escape ou clique fora, com retorno do foco ao botao de origem.
+
+### Conteudo
+
+- Remove Harley-Davidson e Royal Enfield da pagina de marcas.
+- Atualiza textos do destaque, legenda, revisao, diagnostico e perguntas frequentes.
+- Esclarece que o leva e traz e uma indicacao de servico terceirizado sem vinculo com a oficina.
+
+### Empacotamento
+
+- Inclui `marcas.js` na geracao e validacao do pacote, com CSS e JavaScript da pagina referenciados como `v1.6.0`.
+
+## v1.5.0 - 2026-09-25
+
+### Metadados
+
+- Estado: pacote preparado para deploy; release em `main` ainda nao publicada.
+- Artefato: `deploy/aryamecanica-site-hostgator-v1.5.0.zip`.
+
+### Funcionalidades
+
+- Adiciona pagina de marcas com servicos, perguntas frequentes, localizacao e contatos pelo WhatsApp.
+- Inclui links para Marcas na navegacao principal, mobile e rodape.
+- Adiciona sitemap das paginas publicas e robots.txt com permissao de rastreamento.
+
+### Correcoes
+
+- Aplica a cor de destaque no hover e foco dos links do rodape.
+
+### Empacotamento
+
+- Inclui pagina de marcas, seus estilos, sitemap e robots.txt na geracao e validacao do pacote.
+- Atualiza as referencias de cache dos estilos para `v1.5.0` e documenta o envio do sitemap ao Search Console.
+
+## v1.4.0 - 2026-09-19
+
+### Metadados
+
+- Estado: pacote preparado para deploy; release em `main` ainda nao publicada.
+- Artefato: `deploy/aryamecanica-site-hostgator-v1.4.0.zip`.
+
+### Funcionalidades
+
+- Adiciona uma faixa de brilho da esquerda para a direita nos botoes sociais da home e do rodape, Contato no header, Leva e Traz, WhatsApp, Enviar mensagem e Voltar ao topo.
+- Mantem o hover laranja do rodape e aplica o mesmo hover aos botoes sociais da home.
+- Ativa o brilho no hover e no foco por teclado, respeitando a preferencia por movimento reduzido e o estado desabilitado do formulario.
+- Preserva o hover original de Home, Servicos, Nosso trabalho e Quem somos.
+
+### Empacotamento
+
+- Atualiza a referencia de cache do CSS para `v1.4.0` e gera o pacote versionado para a HostGator.
+
 ## v1.3.0 - 2026-09-15
 
 ### Metadados
 
-- Tag prevista apos o merge em `main`: `v1.3.0`.
+- Tag: `v1.3.0`.
 - Artefato: `deploy/aryamecanica-site-hostgator-v1.3.0.zip`.
 
 ### Funcionalidades

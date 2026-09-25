@@ -25,18 +25,26 @@ As mudancas da versao devem ser registradas em `CHANGELOG.md` antes da publicaca
 Na raiz do projeto, execute o script informando a versao sem o prefixo `v`:
 
 ```powershell
-.\scripts\gerar-deploy.ps1 -Versao 1.3.0
+.\scripts\gerar-deploy.ps1 -Versao 1.4.0
 ```
 
 Se a politica local do Windows bloquear scripts, execute sem alterar a configuracao do sistema:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\gerar-deploy.ps1 -Versao 1.3.0
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\gerar-deploy.ps1 -Versao 1.4.0
 ```
 
 O gerador valida o formato da versao, recusa sobrescrever um pacote existente e verifica se os arquivos obrigatorios estao presentes no ZIP. Use uma versao nova para cada publicacao.
 
 Os ZIPs desta pasta sao rastreados pelo Git LFS para evitar que os binarios aumentem excessivamente o historico normal do repositorio.
+
+## Sitemap e buscadores
+
+O pacote inclui `robots.txt` e `sitemap.xml`, que devem ficar na raiz publica do dominio, junto de `index.html`. Publique tambem `marcas.html`, pois essa pagina esta listada no sitemap.
+
+Apos publicar, confira se `https://aryamecanica.com/robots.txt` e `https://aryamecanica.com/sitemap.xml` abrem normalmente. No Google Search Console, envie `https://aryamecanica.com/sitemap.xml` na secao Sitemaps.
+
+Ao adicionar ou remover paginas publicas, atualize o sitemap. Use URLs completas em HTTPS, sem ancoras (`#`) e sem incluir endpoints do formulario. O `robots.txt` permite o rastreamento do site e informa o endereco do sitemap; ele nao impede spam no formulario.
 
 ## Requisitos da hospedagem
 
