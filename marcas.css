@@ -1,0 +1,94 @@
+/* Página de marcas: componentes isolados sobre os tokens compartilhados. */
+.brands-page {
+  --brands-surface: #f3f2ef;
+  --brands-border: #deddd9;
+  --brands-accent-text: #a63a06;
+  --brands-radius: 0.5rem;
+  --brands-container: 76rem;
+  --brands-body-width: 44rem;
+  --brands-border-width: 0.0625rem;
+  --brands-target: 2.75rem;
+  --brands-display: clamp(2.3rem, 4.4vw, 4rem);
+  --brands-heading: clamp(1.8rem, 3vw, 2.75rem);
+  --brands-brand-size: clamp(1.8rem, 3vw, 2.4rem);
+  --brands-shadow: 0 1rem 3rem rgb(0 0 0 / 0.16);
+  color: var(--color-ink);
+  background: var(--brands-surface);
+}
+.brands-shell { width: min(calc(100% - var(--space-8)), var(--brands-container)); margin-inline: auto; }
+.brands-page :is(a, summary):focus-visible { outline: 0.1875rem solid var(--color-accent); outline-offset: var(--space-1); }
+.brands-skip { position: fixed; top: var(--space-2); left: var(--space-4); z-index: 100; padding: var(--space-3); background: var(--color-white); transform: translateY(-200%); }
+.brands-skip:focus { transform: translateY(0); }
+.brands-page .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.brands-page [id] { scroll-margin-top: calc(var(--header-height) + var(--space-6)); }
+.brands-page .site-nav__links [aria-current="page"] { color: var(--color-accent); }
+.brands-hero { padding-block: var(--space-8) var(--space-12); color: var(--color-white); background: var(--color-footer-surface); }
+.brands-hero__grid { display: grid; gap: var(--space-10); }
+.brands-breadcrumb { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-bottom: var(--space-8); font-size: var(--text-sm); color: var(--color-footer-muted); }
+.brands-breadcrumb a:hover { color: var(--color-white); }
+.brands-eyebrow { display: block; color: var(--brands-accent-text); font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.brands-hero .brands-eyebrow, .brands-section--dark .brands-eyebrow { color: var(--color-accent); }
+.brands-hero h1 { margin-block: var(--space-4) var(--space-6); font-family: var(--font-base); font-size: var(--brands-display); line-height: var(--leading-tight); letter-spacing: -0.035em; }
+.brands-hero h1 span { color: var(--color-accent); }
+.brands-intro { max-width: var(--brands-body-width); font-size: var(--text-lg); color: #d7d7d7; }
+.brands-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-block: var(--space-8) var(--space-4); }
+.brands-button { display: inline-flex; align-items: center; justify-content: center; min-height: var(--brands-target); padding: var(--space-4) var(--space-5); border: var(--brands-border-width) solid var(--color-accent); border-radius: var(--brands-radius); background: var(--color-accent); color: var(--color-black); font-size: var(--text-sm); font-weight: 750; text-align: center; transition: background var(--duration-fast); }
+.brands-button:hover { background: #ff833e; border-color: #ff833e; }
+.brands-button--secondary { background: transparent; border-color: #686868; color: var(--color-white); }
+.brands-button--secondary:hover { background: var(--color-ink); border-color: var(--color-white); }
+.brands-hero__note { color: var(--color-footer-muted); font-size: var(--text-sm); }
+.brands-hero__photo { align-self: center; border-radius: var(--brands-radius); overflow: hidden; border: var(--brands-border-width) solid #444; }
+.brands-hero__photo img { width: 100%; aspect-ratio: 1.45; object-fit: cover; }
+.brands-hero__photo figcaption { padding: var(--space-4); font-size: var(--text-sm); color: var(--color-footer-muted); }
+.brands-proof { background: var(--color-white); border-bottom: var(--brands-border-width) solid var(--brands-border); }
+.brands-proof__grid { display: grid; gap: var(--space-5); padding-block: var(--space-6); }
+.brands-proof p { font-size: var(--text-sm); }
+.brands-proof strong { display: block; color: var(--color-ink); font-size: var(--text-lg); }
+.brands-section { padding-block: var(--space-12); }
+.brands-section h2 { max-width: var(--brands-body-width); margin-block: var(--space-3) var(--space-5); font-family: var(--font-base); font-size: var(--brands-heading); line-height: 1.15; letter-spacing: -0.025em; }
+.brands-section__intro { max-width: var(--brands-body-width); }
+.brands-index { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-block: var(--space-8); }
+.brands-index a { display: inline-flex; align-items: center; min-height: var(--brands-target); padding: var(--space-2) var(--space-4); border: var(--brands-border-width) solid var(--brands-border); border-radius: var(--radius-pill); background: var(--color-white); font-size: var(--text-sm); font-weight: 650; }
+.brands-index a:hover { color: var(--brands-accent-text); border-color: var(--brands-accent-text); }
+.brands-grid { display: grid; gap: var(--space-5); }
+.brand-card { display: flex; flex-direction: column; min-width: 0; gap: var(--space-4); padding: var(--space-6); border: var(--brands-border-width) solid var(--brands-border); border-top: 0.1875rem solid var(--color-accent); border-radius: var(--brands-radius); background: var(--color-white); }
+.brand-card:target { outline: 0.1875rem solid var(--color-accent); outline-offset: var(--space-1); }
+.brand-card__top { display: flex; justify-content: space-between; align-items: start; gap: var(--space-4); }
+.brand-card__number { color: var(--color-text); font-size: var(--text-xs); }
+.brand-card__name { font-family: var(--font-base); font-weight: 800; font-size: var(--brands-brand-size); line-height: var(--leading-tight); }
+.brand-card h3 { font-size: var(--text-lg); line-height: 1.35; }
+.brand-card > p:not(.brand-card__name) { color: var(--color-text); }
+.brand-card__models { font-size: var(--text-sm); padding-block: var(--space-4); border-block: var(--brands-border-width) solid var(--brands-border); }
+.brand-card__models strong { display: block; margin-bottom: var(--space-2); color: var(--color-ink); }
+.brands-link { display: inline-flex; align-items: center; min-height: var(--brands-target); color: var(--brands-accent-text); font-weight: 700; text-decoration: underline; text-underline-offset: var(--space-1); }
+.brand-card .brands-link { margin-top: auto; }
+.brands-other { margin-top: var(--space-8); }
+.brands-other a { color: var(--brands-accent-text); text-decoration: underline; text-underline-offset: var(--space-1); }
+.brands-section--dark { color: var(--color-white); background: var(--color-footer-surface); }
+.brands-services { display: grid; gap: var(--space-8); margin-top: var(--space-8); }
+.brands-services h3 { margin-block: var(--space-3); font-size: var(--text-lg); }
+.brands-services p { color: #d7d7d7; }
+.brands-faq { display: grid; gap: var(--space-6); }
+.brands-faq details { border-bottom: var(--brands-border-width) solid var(--brands-border); }
+.brands-faq summary { padding-block: var(--space-5); font-weight: 700; cursor: pointer; }
+.brands-faq details p { padding-bottom: var(--space-5); }
+.brands-location { background: var(--color-white); border-top: var(--brands-border-width) solid var(--brands-border); }
+.brands-location__grid { display: grid; gap: var(--space-8); }
+.brands-location address { margin-block: var(--space-3); }
+.brands-location__action { display: flex; flex-direction: column; align-items: start; gap: var(--space-5); padding: var(--space-6); background: var(--brands-surface); border-radius: var(--brands-radius); }
+@media (min-width: 45rem) {
+  .brands-proof__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .brands-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .brands-services { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .brands-faq, .brands-location__grid { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: var(--space-12); }
+  .brands-section { padding-block: var(--space-20); }
+}
+@media (min-width: 64rem) {
+  .brands-hero__grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); align-items: center; }
+  .brands-hero { padding-block: var(--space-10) var(--space-20); }
+  .brand-card { padding: var(--space-8); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brands-page { scroll-behavior: auto; }
+  .brands-button { transition: none; }
+}
