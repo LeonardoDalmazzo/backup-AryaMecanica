@@ -6,6 +6,29 @@ Todas as mudancas relevantes deste projeto sao registradas neste arquivo. O proj
 
 - Nenhuma mudanca versionada.
 
+## v1.6.0 - 2026-09-25
+
+### Metadados
+
+- Estado: pacote preparado para deploy; release em `main` ainda nao publicada.
+- Artefato: `deploy/aryamecanica-site-hostgator-v1.6.0.zip`.
+
+### Funcionalidades
+
+- Substitui listas dos cards por botoes que abrem lightboxes de modelos para as oito marcas.
+- Aplica cores por marca no hover e foco dos atalhos, botoes de modelos e links de manutencao.
+- Permite fechar os lightboxes por botao, Escape ou clique fora, com retorno do foco ao botao de origem.
+
+### Conteudo
+
+- Remove Harley-Davidson e Royal Enfield da pagina de marcas.
+- Atualiza textos do destaque, legenda, revisao, diagnostico e perguntas frequentes.
+- Esclarece que o leva e traz e uma indicacao de servico terceirizado sem vinculo com a oficina.
+
+### Empacotamento
+
+- Inclui `marcas.js` na geracao e validacao do pacote, com CSS e JavaScript da pagina referenciados como `v1.6.0`.
+
 ## v1.5.0 - 2026-09-25
 
 ### Metadados
