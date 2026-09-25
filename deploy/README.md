@@ -38,6 +38,14 @@ O gerador valida o formato da versao, recusa sobrescrever um pacote existente e 
 
 Os ZIPs desta pasta sao rastreados pelo Git LFS para evitar que os binarios aumentem excessivamente o historico normal do repositorio.
 
+## Sitemap e buscadores
+
+O pacote inclui `robots.txt` e `sitemap.xml`, que devem ficar na raiz publica do dominio, junto de `index.html`. Publique tambem `marcas.html`, pois essa pagina esta listada no sitemap.
+
+Apos publicar, confira se `https://aryamecanica.com/robots.txt` e `https://aryamecanica.com/sitemap.xml` abrem normalmente. No Google Search Console, envie `https://aryamecanica.com/sitemap.xml` na secao Sitemaps.
+
+Ao adicionar ou remover paginas publicas, atualize o sitemap. Use URLs completas em HTTPS, sem ancoras (`#`) e sem incluir endpoints do formulario. O `robots.txt` permite o rastreamento do site e informa o endereco do sitemap; ele nao impede spam no formulario.
+
 ## Requisitos da hospedagem
 
 - Confirme que o certificado SSL da HostGator esta ativo antes de publicar. O `.htaccess` redireciona todo acesso para HTTPS.

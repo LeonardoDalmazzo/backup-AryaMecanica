@@ -16,6 +16,10 @@ $destinoTemporario = Join-Path $pastaDeploy ".tmp-$nomePacote"
 
 $itensPublicacao = @(
     'index.html'
+    'robots.txt'
+    'sitemap.xml'
+    'marcas.html'
+    'marcas.css'
     'style.css'
     'script.js'
     'enviar-contato.php'
@@ -25,6 +29,10 @@ $itensPublicacao = @(
 
 $entradasObrigatorias = @(
     'index.html'
+    'robots.txt'
+    'sitemap.xml'
+    'marcas.html'
+    'marcas.css'
     'style.css'
     'script.js'
     'enviar-contato.php'

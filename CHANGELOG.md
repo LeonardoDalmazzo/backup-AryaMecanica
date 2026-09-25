@@ -6,6 +6,28 @@ Todas as mudancas relevantes deste projeto sao registradas neste arquivo. O proj
 
 - Nenhuma mudanca versionada.
 
+## v1.5.0 - 2026-09-25
+
+### Metadados
+
+- Estado: pacote preparado para deploy; release em `main` ainda nao publicada.
+- Artefato: `deploy/aryamecanica-site-hostgator-v1.5.0.zip`.
+
+### Funcionalidades
+
+- Adiciona pagina de marcas com servicos, perguntas frequentes, localizacao e contatos pelo WhatsApp.
+- Inclui links para Marcas na navegacao principal, mobile e rodape.
+- Adiciona sitemap das paginas publicas e robots.txt com permissao de rastreamento.
+
+### Correcoes
+
+- Aplica a cor de destaque no hover e foco dos links do rodape.
+
+### Empacotamento
+
+- Inclui pagina de marcas, seus estilos, sitemap e robots.txt na geracao e validacao do pacote.
+- Atualiza as referencias de cache dos estilos para `v1.5.0` e documenta o envio do sitemap ao Search Console.
+
 ## v1.4.0 - 2026-09-19
 
 ### Metadados
