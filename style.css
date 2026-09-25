@@ -1332,7 +1332,7 @@ body.is-menu-open .site-header {
 
 .site-footer__nav a:hover,
 .site-footer__nav a:focus-visible {
-  color: var(--color-white);
+  color: var(--color-accent);
   transform: translateX(var(--space-1));
 }
 
